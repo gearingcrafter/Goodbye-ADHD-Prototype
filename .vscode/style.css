@@ -1,0 +1,189 @@
+/* Core Variables for the Minimalist Slate Aesthetic */
+:root {
+    --bg-obsidian: #0f172a;        /* Deep slate background */
+    --card-charcoal: #1e293b;      /* Slightly lighter card background */
+    --text-primary: #f8fafc;       /* Clean white text */
+    --text-secondary: #94a3b8;     /* Muted silver for secondary text */
+    --accent-slate-blue: #6366f1;  /* Calming professional accent color */
+    --success-green: #10b981;      /* Positive reinforcement color */
+}
+
+/* Global Reset for clean margins */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #000; /* Black background behind the mobile view */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: var(--text-primary);
+}
+
+/* Simulating a Mobile Device Screen */
+.app-container {
+    width: 100%;
+    max-width: 400px; /* Mobile phone width */
+    height: 800px;
+    background-color: var(--bg-obsidian);
+    border-radius: 30px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 25px 50px -12px rgba(255, 255, 255, 0.05); /* Soft premium shadow */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Header Styling */
+.app-header {
+    padding: 30px 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--card-charcoal);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.app-header h1 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.identity-badge {
+    display: inline-block;
+    margin-top: 5px;
+    font-size: 0.8rem;
+    color: var(--accent-slate-blue);
+    background-color: rgba(99, 102, 241, 0.1);
+    padding: 4px 8px;
+    border-radius: 12px;
+}
+
+.profile-icon {
+    font-size: 2rem;
+    color: var(--text-secondary);
+}
+
+/* Main Dashboard Content area */
+.app-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* UI Cards (The "Glassmorphism" feel) */
+.card {
+    background-color: var(--card-charcoal);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.card h2 {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Visual Scaffolding (Focus Timer) */
+.progress-ring-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.progress-ring {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: conic-gradient(var(--accent-slate-blue) 75%, var(--bg-obsidian) 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+}
+
+.time-left {
+    background-color: var(--card-charcoal);
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.scaffolding-text {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* Micro-Milestones (Habits) */
+.milestone-list {
+    list-style: none;
+}
+
+.milestone {
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    font-size: 1.1rem;
+}
+
+.milestone:last-child {
+    border-bottom: none;
+}
+
+.milestone i {
+    margin-right: 15px;
+    font-size: 1.3rem;
+}
+
+.completed { color: var(--text-secondary); text-decoration: line-through; }
+.completed i { color: var(--success-green); }
+.pending { color: var(--text-primary); }
+.pending i { color: var(--text-secondary); }
+
+/* Bottom Navigation Bar */
+.bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 10px 25px;
+    background-color: var(--card-charcoal);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav-item {
+    color: var(--text-secondary);
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.75rem;
+    transition: color 0.3s ease;
+}
+
+.nav-item i {
+    font-size: 1.2rem;
+}
+
+.nav-item.active {
+    color: var(--accent-slate-blue);
+}
