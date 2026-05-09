@@ -1,0 +1,131 @@
+:root {
+    --bg-deep: #050505;
+    --glass-bg: rgba(20, 25, 35, 0.4);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --text-primary: #ffffff;
+    --text-muted: #8b9bb4;
+    --accent-cyan: #00f0ff;
+    --accent-purple: #7000ff;
+    --success-neon: #00ff88;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, sans-serif; }
+
+body {
+    background-color: var(--bg-deep);
+    display: flex; justify-content: center; align-items: center; min-height: 100vh;
+    color: var(--text-primary);
+    overflow: hidden;
+}
+
+/* --- EPIC AMBIENT BACKGROUND --- */
+.ambient-orb {
+    position: absolute; border-radius: 50%; filter: blur(80px); z-index: -1; opacity: 0.5;
+}
+.orb-1 {
+    width: 300px; height: 300px; background: var(--accent-purple);
+    top: 10%; left: 30%; animation: float 10s infinite alternate;
+}
+.orb-2 {
+    width: 250px; height: 250px; background: var(--accent-cyan);
+    bottom: 10%; right: 30%; animation: float 12s infinite alternate-reverse;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px) scale(1); }
+    100% { transform: translateY(50px) scale(1.2); }
+}
+
+/* --- THE DEVICE --- */
+.app-container {
+    width: 100%; max-width: 400px; height: 800px;
+    background: rgba(10, 12, 16, 0.7);
+    backdrop-filter: blur(20px);
+    border-radius: 40px;
+    display: flex; flex-direction: column;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8), inset 0 0 2px rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative; overflow: hidden;
+}
+
+/* --- HEADER --- */
+.app-header { padding: 40px 25px 20px; display: flex; justify-content: space-between; align-items: center; }
+.app-header h1 { font-size: 1.3rem; font-weight: 700; letter-spacing: 1px; }
+
+.pulse-badge {
+    margin-top: 8px; font-size: 0.75rem; color: var(--accent-cyan);
+    background: rgba(0, 240, 255, 0.1); padding: 5px 10px; border-radius: 20px;
+    border: 1px solid rgba(0, 240, 255, 0.3);
+    display: inline-block;
+    animation: pulse-border 2s infinite;
+}
+
+.profile-avatar { width: 45px; height: 45px; border-radius: 50%; border: 2px solid var(--accent-purple); }
+
+/* --- GLASSMORPHISM CARDS --- */
+.app-content { flex: 1; padding: 20px; display: flex; flex-direction: column; gap: 20px; overflow-y: auto; }
+
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px; padding: 25px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.glass-card h2 { font-size: 0.9rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 2px; }
+.reward-points { color: #ffd700; font-weight: bold; font-size: 0.9rem; background: rgba(255, 215, 0, 0.1); padding: 4px 10px; border-radius: 12px; }
+
+/* --- EPIC FOCUS TIMER --- */
+.progress-ring-container { display: flex; justify-content: center; margin: 30px 0; }
+
+.epic-glow {
+    width: 180px; height: 180px; border-radius: 50%;
+    background: conic-gradient(var(--accent-cyan) 75%, rgba(255,255,255,0.05) 0);
+    display: flex; justify-content: center; align-items: center;
+    animation: breathing-glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes breathing-glow {
+    0% { box-shadow: 0 0 10px rgba(0, 240, 255, 0.2), inset 0 0 20px rgba(0,0,0,0.8); }
+    100% { box-shadow: 0 0 30px rgba(0, 240, 255, 0.6), inset 0 0 20px rgba(0,0,0,0.8); }
+}
+
+.time-left {
+    background: var(--bg-deep); width: 160px; height: 160px; border-radius: 50%;
+    display: flex; justify-content: center; align-items: center;
+    font-size: 3rem; font-weight: 300; letter-spacing: 2px;
+    box-shadow: inset 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.scaffolding-text { text-align: center; font-size: 0.8rem; color: var(--text-muted); }
+
+/* --- HABIT LIST INTERACTIVITY --- */
+.milestone-list { list-style: none; }
+.milestone { display: flex; align-items: center; padding: 15px 0; border-bottom: 1px solid var(--glass-border); transition: all 0.3s ease; }
+.milestone:last-child { border-bottom: none; }
+.milestone i { margin-right: 15px; font-size: 1.4rem; }
+
+.hover-lift:hover { transform: translateX(10px); color: var(--accent-cyan); cursor: pointer; }
+.completed { color: var(--text-muted); text-decoration: line-through; }
+.neon-success { color: var(--success-neon); text-shadow: 0 0 10px rgba(0, 255, 136, 0.5); }
+
+/* --- GLASS NAV BAR --- */
+.glass-nav {
+    display: flex; justify-content: space-around; align-items: center;
+    padding: 20px 10px 30px;
+    background: rgba(10, 12, 16, 0.8); backdrop-filter: blur(20px);
+    border-top: 1px solid var(--glass-border);
+}
+.nav-item { color: var(--text-muted); text-decoration: none; font-size: 1.4rem; transition: 0.3s; }
+.nav-item.active { color: var(--accent-cyan); }
+.nav-item:hover { color: var(--text-primary); transform: translateY(-3px); }
+
+.epic-add-btn {
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+    color: white !important; width: 50px; height: 50px; border-radius: 50%;
+    display: flex; justify-content: center; align-items: center;
+    box-shadow: 0 5px 15px rgba(112, 0, 255, 0.4);
+}
