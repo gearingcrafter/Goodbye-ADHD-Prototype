@@ -9,53 +9,67 @@
 </head>
 <body>
 
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+
     <div class="app-container">
         
         <header class="app-header">
             <div class="user-info">
                 <h1>Goodbye ADHD</h1>
-                <span class="identity-badge"><i class="fas fa-graduation-cap"></i> Academic Profile</span>
+                <div class="identity-badge pulse-badge">
+                    <i class="fas fa-bolt"></i> Flow State Active
+                </div>
             </div>
-            <i class="fas fa-user-circle profile-icon"></i>
+            <div class="profile-glow">
+                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" alt="Profile" class="profile-avatar">
+            </div>
         </header>
 
         <main class="app-content">
             
-            <section class="card focus-section">
-                <h2>Current Sprint</h2>
+            <section class="card glass-card focus-section">
+                <div class="card-header">
+                    <h2>Deep Work Sprint</h2>
+                    <i class="fas fa-ellipsis-h text-muted"></i>
+                </div>
                 <div class="progress-ring-container">
-                    <div class="progress-ring">
+                    <div class="progress-ring epic-glow">
                         <span class="time-left">14:59</span>
                     </div>
                 </div>
-                <p class="scaffolding-text">Visual Scaffolding Active</p>
+                <p class="scaffolding-text">Visual Scaffolding engaged. You are doing great.</p>
             </section>
 
-            <section class="card habit-section">
-                <h2>Micro-Milestones</h2>
+            <section class="card glass-card habit-section">
+                <div class="card-header">
+                    <h2>Micro-Milestones</h2>
+                    <span class="reward-points"><i class="fas fa-star"></i> 150</span>
+                </div>
                 <ul class="milestone-list">
                     <li class="milestone completed">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Open Textbook</span>
+                        <i class="fas fa-check-circle neon-success"></i>
+                        <span>Deconstruct essay prompt</span>
                     </li>
-                    <li class="milestone pending">
+                    <li class="milestone pending hover-lift">
                         <i class="far fa-circle"></i>
-                        <span>Write 1 Sentence</span>
+                        <span>Write opening sentence</span>
                     </li>
-                    <li class="milestone pending">
+                    <li class="milestone pending hover-lift">
                         <i class="far fa-circle"></i>
-                        <span>Set Focus Timer</span>
+                        <span>Review rubric criteria</span>
                     </li>
                 </ul>
             </section>
 
         </main>
 
-        <nav class="bottom-nav">
-            <a href="#" class="nav-item active"><i class="fas fa-home"></i><span>Home</span></a>
-            <a href="#" class="nav-item"><i class="fas fa-stopwatch"></i><span>Focus</span></a>
-            <a href="#" class="nav-item"><i class="fas fa-list-check"></i><span>Habits</span></a>
-            <a href="#" class="nav-item"><i class="fas fa-chart-line"></i><span>Mood</span></a>
+        <nav class="bottom-nav glass-nav">
+            <a href="#" class="nav-item active"><i class="fas fa-border-all"></i></a>
+            <a href="#" class="nav-item"><i class="fas fa-stopwatch"></i></a>
+            <a href="#" class="nav-item epic-add-btn"><i class="fas fa-plus"></i></a>
+            <a href="#" class="nav-item"><i class="fas fa-list-check"></i></a>
+            <a href="#" class="nav-item"><i class="fas fa-chart-line"></i></a>
         </nav>
 
     </div>
